@@ -29,12 +29,15 @@
   
 
        <%= row.email %>
+      <% end %>
+        <% if current_user %>
+        <% if current_user.id = post.user_id %>
 
-        <% end %>
-
-
-  <% if current_user %>
-<% if current_user.id = @user%>
+        <%= current_user.id %> then
+        <% User.where(:id => post.user_id).all.each do |user| %>
+      
+        <%= user.email %>
+        <%end%>
           <div class = "pull-right">
                   <%= link_to "Edit Post",
                       edit_post_path(post), :class => 'btn btn-mini' %>
@@ -46,7 +49,8 @@
         </div>
         <% end %>
       </div>
-    <% end %>
+
+<% end %>
     <% end %>
   </tbody>
 </table>

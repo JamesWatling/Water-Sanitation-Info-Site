@@ -3,10 +3,10 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
-
     if current_user
-      @user = current_user
-    end
+    @user = current_user.email
+end 
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
