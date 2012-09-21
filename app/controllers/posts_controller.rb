@@ -4,6 +4,9 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
 
+    if current_user
+      @user = current_user
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
