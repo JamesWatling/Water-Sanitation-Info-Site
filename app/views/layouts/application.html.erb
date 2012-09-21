@@ -35,8 +35,7 @@
     <%= favicon_link_tag 'images/favicon.ico', :rel => 'shortcut icon' %>
   </head>
   <body>
- <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -55,9 +54,8 @@
                  <div style="float:right;" >
 
                   <% if current_user%>
-
-
                      <%=current_user.email.to_s%> 
+                     <%= link_to "Sign Out", destroy_user_session_path , :method => :delete %>
                   <%else%>
                   
                   <%= form_for("user", :url => user_session_path) do |f| %>
@@ -75,6 +73,16 @@
     </div>
 
     <div class="container">
+      <div class = "span3">
+            <% if notice != nil or alert != nil %>
+    <div class = "span5 offset3">
+    <div class = "well">
+       <%= notice %>
+       <%= alert %>
+     </div>
+   </div>
+     <% end %>
+   </div>
       <div class="content">
         <div class="row">
            <div class="span3">
