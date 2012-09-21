@@ -10,6 +10,8 @@
   <dd><%= @post.description %></dd>
 </dl>
 
+<% if current_user %>
+<% if current_user.id = @user%>
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               posts_path, :class => 'btn'  %>
@@ -21,3 +23,5 @@
               :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
               :class => 'btn btn-danger' %>
 </div>
+<% end %>
+<% end %>

@@ -2,6 +2,8 @@ SWEN303::Application.routes.draw do
   
   
 
+  resources :comments
+
   devise_for :users
 
   get "static_pages/about"

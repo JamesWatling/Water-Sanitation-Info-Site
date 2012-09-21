@@ -34,6 +34,7 @@
 
 
   <% if current_user %>
+<% if current_user.id = @user%>
           <div class = "pull-right">
                   <%= link_to "Edit Post",
                       edit_post_path(post), :class => 'btn btn-mini' %>
@@ -45,6 +46,7 @@
         </div>
         <% end %>
       </div>
+    <% end %>
     <% end %>
   </tbody>
 </table>
