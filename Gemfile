@@ -5,7 +5,7 @@ gem 'liquid'
 gem 'devise'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-gem 'sqlite3'
+gem 'pg'
 gem "twitter-bootstrap-rails", :group => :assets
 
 # Gems used only for assets and not required
