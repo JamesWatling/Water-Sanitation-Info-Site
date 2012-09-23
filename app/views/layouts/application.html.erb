@@ -1,134 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Reinventing the toilet" %></title>
-    <%= csrf_meta_tags %>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= content_for?(:title) ? yield(:title) : "Reinventing the toilet" %></title>
+  <%= csrf_meta_tags %>
 
-    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+  <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-    <![endif]-->
+      <![endif]-->
 
-    <%= stylesheet_link_tag "application", :media => "all" %>
+      <%= stylesheet_link_tag "application", :media => "all" %>
 
-    <!-- For third-generation iPad with high-resolution Retina display: -->
-    <!-- Size should be 144 x 144 pixels -->
-    <%= favicon_link_tag 'images/apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
+      <!-- For third-generation iPad with high-resolution Retina display: -->
+      <!-- Size should be 144 x 144 pixels -->
+      <%= favicon_link_tag 'images/apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
 
-    <!-- For iPhone with high-resolution Retina display: -->
-    <!-- Size should be 114 x 114 pixels -->
-    <%= favicon_link_tag 'images/apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
+      <!-- For iPhone with high-resolution Retina display: -->
+      <!-- Size should be 114 x 114 pixels -->
+      <%= favicon_link_tag 'images/apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
 
-    <!-- For first- and second-generation iPad: -->
-    <!-- Size should be 72 x 72 pixels -->
-    <%= favicon_link_tag 'images/apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
+      <!-- For first- and second-generation iPad: -->
+      <!-- Size should be 72 x 72 pixels -->
+      <%= favicon_link_tag 'images/apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
 
-    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-    <!-- Size should be 57 x 57 pixels -->
-    <%= favicon_link_tag 'images/apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
+      <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+      <!-- Size should be 57 x 57 pixels -->
+      <%= favicon_link_tag 'images/apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
 
-    <!-- For all other devices -->
-    <!-- Size should be 32 x 32 pixels -->
-    <%= favicon_link_tag 'images/favicon.ico', :rel => 'shortcut icon' %>
-  </head>
-  <body>
- 
+      <!-- For all other devices -->
+      <!-- Size should be 32 x 32 pixels -->
+      <%= favicon_link_tag 'images/favicon.ico', :rel => 'shortcut icon' %>
+    </head>
+    <body>
 
 
-     
-     
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href = "/">Reinventing the toilet</a>
-          <div class="container nav-collapse">
-            <ul class="nav">
-           <li><%= link_to "Our Mission", "/static_pages/info"  %></li>
-                  <li><%= link_to "Contact Us", "/static_pages/contact"  %></li>
-                  <li> <a href="#test_modal" data-toggle="modal"> Help </a></li>
-                 
 
-                  <% if current_user%>
-                    <li> <%=link_to current_user.email.to_s, "/"%> </li>
-                    <li><%= link_to "Sign Out", destroy_user_session_path , :method => :delete %></li>
-                </ul>
-                  <%else%>
-                  
 
-                 <ul class="nav"> 
 
-                  <div class = "nav1">
-                  <%= form_for("user", :url => user_session_path) do |f| %>
-                      <%= f.text_field :email  , :class => 'input-large'%> 
-                     <%= f.password_field :password  , :class => 'input-large '%>  
-                
-                     <%= f.submit 'Log in' , :class => 'btn btn-small btn-primary'%>
-                 
-                  <% end %>
-                  <%end%>
+      <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <a class="brand" href="#">Reinventing the Toilet</a>
+            </a>
 
-                 
+            <div class="container nav-collapse">
+              <ul class="nav">
+               <li><%= link_to "Our Mission", "/static_pages/info"  %></li>
+               <li><%= link_to "Contact Us", "/static_pages/contact"  %></li>
+               <li> <a href="#test_modal" data-toggle="modal"> FAQ </a></li>
+
+            
+
+             <% if current_user%>
+             <ul class="nav pull-right"> 
+
+              <li> <%=link_to current_user.email.to_s, "" %> </li>
+              <li> <%= link_to "Sign Out", destroy_user_session_path , :method => :delete %></li>
+            </ul>
+            <%else%>
+
+
+
+
+
+            <%= form_for("user", :url => user_session_path) do |f| %>
+            <ul class="nav pull-right"> 
+            <li><%= f.text_field :email  , :class => 'input-large', :placeholder => "Email"%> </li>
+            <li><%= f.password_field :password  , :class => 'input-large ' , :placeholder => "Password"%>  </li>
+            <li><%= f.submit 'Log in' , :class => 'btn btn-small btn-primary'%> </li>
+          </ul>
+          <% end %>
+          <%end%>
+
+ </div>
+
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
 </div>
-         </ul>
-          </div><!--/.nav-collapse -->
-        </div>
+
+<div class="container">
+  <div class="content">
+    <div class="row">
+     <div class="span3">
+
+      <br/>
+      <div class="well sidebar-nav">
+        <h3>Navigation</h3>
+        <ul class="nav nav-list">
+          <li class="nav-header">Sidebar</li>
+          <li><%= link_to "Our Mission", "/static_pages/info"  %></li>
+          <li><%= link_to "About Us", "/static_pages/about"  %></li>
+          <li><%= link_to "Contact Us", "/static_pages/contact"  %></li>
+        </ul>
       </div>
     </div>
+    <div class="span9">
 
-    <div class="container">
-      <div class="content">
-        <div class="row">
-           <div class="span3">
-
-<br/>
-          <div class="well sidebar-nav">
-                <h3>Navigation</h3>
-                <ul class="nav nav-list">
-                  <li class="nav-header">Sidebar</li>
-                  <li><%= link_to "Our Mission", "/static_pages/info"  %></li>
-                  <li><%= link_to "About Us", "/static_pages/about"  %></li>
-                  <li><%= link_to "Contact Us", "/static_pages/contact"  %></li>
-                </ul>
-              </div>
-               </div>
-           <div class="span9">
-
-<br/>
- <div class = "alert alert-success">
+      <br/>
+      <div class = "alert alert-success">
         <button type = "button" class ="close" data-dismiss="alert">x</button>
         <strong>
-       Welcome to Water Sanitation, as this is your first visit so have a look around
-     </strong>
-     
+         Welcome to Water Sanitation, as this is your first visit so have a look around
+       </strong>
+
      </div>
 
- <% if notice != nil or alert != nil %>
-      <div class = "alert">
-     <button type = "button" class ="close" data-dismiss="alert">x</button>
+     <% if notice != nil or alert != nil %>
+     <div class = "alert">
+       <button type = "button" class ="close" data-dismiss="alert">x</button>
        <%= notice %>
        <%= alert %>
-       
+
      </div>
-<% end %>
+     <% end %>
 
-              <%= yield %>
-            
-            </div><!--/span-->
-        </div><!--/row-->
-      </div><!--/content-->
-      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> <footer style = "padding-left: 87%;">
-        <p>&copy; James Watling 2012</p>
-      </footer>
 
-    </div> <!-- /container -->
+
+
+
+
+
+     <%= yield %>
+
+   </div><!--/span-->
+ </div><!--/row-->
+</div><!--/content-->
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> <footer style = "padding-left: 87%;">
+<p>&copy; James Watling 2012</p>
+</footer>
+
+</div> <!-- /container -->
 
     <!-- Javascripts
     ================================================== -->
@@ -137,37 +147,63 @@
 
   </body>
 
-  <div class="modal fade" id="test_modal">
-  <div class="modal-header">
+  <div class="modal fade large" id="test_modal">
+
     <a class="close" data-dismiss="modal">&times;</a>
-    <h3>Help - FAQ</h3>
-  </div>
-  <div class="modal-body">
-    <p>Here is a list of all the frequently asked questions</p>
-    <br/>
-    <strong>How do you protect my privacy?</strong> <br/><br/>
-
-At reinventing the toilet, we are keenly aware of the trust our users place in us, and our responsibility to protect their privacy. We believe transparency and choice are the foundations of privacy. To help you make informed decisions about your own privacy, we work to let you know what information we collect when you use our products and services and how we use that information to improve your service.
-<br/><br/>
-<strong>Does you use cookies? </strong>
-
-<br/>Yes, like most websites we use cookies to improve your experience and to provide services and advertising. Cookies help us keep a record of your preferences, like whether you want your results in English or French, or if you use our admin panel.
-<br/><br/>
-
-<strong>How can I contact you if I have a privacy question or complaint?</strong>
-<br/>
-You can contact us any time through our privacy contact form. If you prefer, you can also write to:
-Privacy Matters
-c/o James Watling
-1600 Amphitheatre Parkway
-Mountain View, California, 94043
-USA
 
 
-  </div>
-  <div class="modal-footer">
-    <a href="#" class="btn" data-dismiss="modal">Close</a>
-   
-  </div>
-</div>
-</html>
+    <div class="modal-body">
+      <div id="navbarExample" class="navbar navbar-static">
+        <div class="navbar-inner">
+          <div class="container" style="width: auto;">
+            <a class="brand" href="#privacy">FAQ</a>
+
+            <ul class="nav">
+              <li class=""><a href="#privacy">Privacy</a></li>
+              <li class=""><a href="#cookies">Cookies</a></li>
+              <li class=""><a href="#concerns">Concerns</a></li>
+              <li class=""><a href="#government">Government</a></li>
+              <li class=""><a href="#remove">Removal Policy</a></li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div data-spy="scroll" data-target="#navbarExample" data-offset="1" class="scrollspy-example">
+        <h4 id="privacy">How do you protect my privacy?</h4> <br/>
+        <p>At reinventing the toilet, we are keenly aware of the trust our users place in us, and our responsibility to protect their privacy. We believe transparency and choice are the foundations of privacy. To help you make informed decisions about your own privacy, we work to let you know what information we collect when you use our products and services and how we use that information to improve your service.</p>
+        <br/><h4 id="cookies">Does you use cookies?</h4><br/>
+        <p>Yes, like most websites we use cookies to improve your experience and to provide services and advertising. Cookies help us keep a record of your preferences, like whether you want your results in English or French, or if you use our admin panel.</p>
+        <br/><h4 id="concerns">How can I contact you if I have a privacy question or complaint?</h4><br/>
+        <p>If you feel there has been a breach of you or someone elses privacy please enclose all appropriate information including the time and date of the acitivty and then you can contact us any time through our privacy contact form. If you prefer, you can also write to: Privacy Matters c/o James Watling 1600 Amphitheatre Parkway Mountain View, California, 94043 USA</p>
+        <br/><h4 id="government">How often are you asked by governments to provide data on users?</h4><br/>
+        <p>Like other technology and communications companies, we receive requests from government agencies around the world to provide information about users of our services and products. To help increase transparency about these requests we have created the Government Requests Tool, which shows the number of requests that we have received that relate primarily to criminal investigations. For more information about the tool and the nature of these requests, please check the Government Requests Tool FAQ.</p>
+        <br/><h4 id="remove">How can I remove information about myself from this website?</h4><br/>
+        <p>
+          Like all websites, we are a reflection of the content and information publicly available on the web. we do not have the ability to remove content directly from the web, so removing search results from us or another search engine leaves the underlying content unaffected. If you want to remove something from the web, you should contact the webmaster of the site and ask him or her to make a change. Once the content has been removed and our search engine crawl has visited the page again, the information will no longer appear in our search results. If you have an urgent removal request, you can also visit our help page for more information.</p>
+
+        </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn" data-dismiss="modal">Close</a>
+
+      </div>
+    </div>
+    </html>
+
+    <script>
+    $('#navbar_side').affix() 
+    </script>
+
+    <script>
+window.setTimeout(function() { $(".welcome").alert('close'); }, 2000);
+    </script>
+
+    <script>
+
+    $('#navbarExample').scrollspy()
+
+    </script>
