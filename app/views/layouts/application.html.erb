@@ -38,16 +38,7 @@
  
 
 
-      <div class = "alert span10 offset2">
-        <button type = "button" class ="close" data-dismiss="alert">x</button>
-        <strong>
-       Welcome to water sanitation this is your first visit so have a look around
-     </strong>
-     <% if notice != nil or alert != nil %>
-     <%= notice %>
-       <%= alert %>
-       <% end %>
-     </div>
+     
      
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
@@ -64,22 +55,29 @@
                   <li><%= link_to "Contact Us", "/static_pages/contact"  %></li>
                   <li> <a href="#test_modal" data-toggle="modal"> Help </a></li>
                  
-                 <div style="float:right;" >
 
                   <% if current_user%>
-                     <%=current_user.email.to_s%> 
-                     <%= link_to "Sign Out", destroy_user_session_path , :method => :delete %>
+                    <li> <%=link_to current_user.email.to_s, "/"%> </li>
+                    <li><%= link_to "Sign Out", destroy_user_session_path , :method => :delete %></li>
+                </ul>
                   <%else%>
                   
+
+                 <ul class="nav"> 
+
+                  <div class = "nav1">
                   <%= form_for("user", :url => user_session_path) do |f| %>
-                    <%= f.text_field :email %> 
-                      <%= f.password_field :password %>
-                      <%= f.submit 'Log in' %>
+                      <%= f.text_field :email  , :class => 'input-large'%> 
+                     <%= f.password_field :password  , :class => 'input-large '%>  
+                
+                     <%= f.submit 'Log in' , :class => 'btn btn-small btn-primary'%>
+                 
                   <% end %>
                   <%end%>
-                </div>
 
-            </ul>
+                 
+</div>
+         </ul>
           </div><!--/.nav-collapse -->
         </div>
       </div>
@@ -90,6 +88,7 @@
         <div class="row">
            <div class="span3">
 
+<br/>
           <div class="well sidebar-nav">
                 <h3>Navigation</h3>
                 <ul class="nav nav-list">
@@ -101,13 +100,31 @@
               </div>
                </div>
            <div class="span9">
+
+<br/>
+ <div class = "alert alert-success">
+        <button type = "button" class ="close" data-dismiss="alert">x</button>
+        <strong>
+       Welcome to Water Sanitation, as this is your first visit so have a look around
+     </strong>
+     
+     </div>
+
+ <% if notice != nil or alert != nil %>
+      <div class = "alert">
+     <button type = "button" class ="close" data-dismiss="alert">x</button>
+       <%= notice %>
+       <%= alert %>
+       
+     </div>
+<% end %>
+
               <%= yield %>
             
             </div><!--/span-->
         </div><!--/row-->
       </div><!--/content-->
-
-      <footer>
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> <footer style = "padding-left: 87%;">
         <p>&copy; James Watling 2012</p>
       </footer>
 
@@ -123,10 +140,30 @@
   <div class="modal fade" id="test_modal">
   <div class="modal-header">
     <a class="close" data-dismiss="modal">&times;</a>
-    <h3>Help</h3>
+    <h3>Help - FAQ</h3>
   </div>
   <div class="modal-body">
     <p>Here is a list of all the frequently asked questions</p>
+    <br/>
+    <strong>How do you protect my privacy?</strong> <br/><br/>
+
+At reinventing the toilet, we are keenly aware of the trust our users place in us, and our responsibility to protect their privacy. We believe transparency and choice are the foundations of privacy. To help you make informed decisions about your own privacy, we work to let you know what information we collect when you use our products and services and how we use that information to improve your service.
+<br/><br/>
+<strong>Does you use cookies? </strong>
+
+<br/>Yes, like most websites we use cookies to improve your experience and to provide services and advertising. Cookies help us keep a record of your preferences, like whether you want your results in English or French, or if you use our admin panel.
+<br/><br/>
+
+<strong>How can I contact you if I have a privacy question or complaint?</strong>
+<br/>
+You can contact us any time through our privacy contact form. If you prefer, you can also write to:
+Privacy Matters
+c/o James Watling
+1600 Amphitheatre Parkway
+Mountain View, California, 94043
+USA
+
+
   </div>
   <div class="modal-footer">
     <a href="#" class="btn" data-dismiss="modal">Close</a>

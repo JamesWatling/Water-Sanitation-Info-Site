@@ -11,3 +11,10 @@
  *= require_self
  *= require_tree .
  */
+.nav1
+{
+	position:relative;
+    padding-top: 7px;
+    padding-left: 145px;
+}
+

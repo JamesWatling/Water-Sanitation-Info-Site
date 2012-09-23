@@ -1,2 +1,31 @@
-<h1>StaticPages#contact</h1>
-<p>Find me in app/views/static_pages/contact.html.erb</p>
+ <div class="page-header">
+ 	<h2>Send us a message</h2>
+ </div>
+ <p>We want to hear from you! Just enter your name, email address, and message into the form below and send away.</p>
+
+ <p>All fields are required</p>
+
+ <form method="post" action="/contact">
+ 	<fieldset>
+ 		<div class="clearfix">
+ 			<br/>
+ 			<div class="input">
+ 				Name:
+ 				<input type="text"  placeholder="Name">
+       			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email:
+ 				<input type="text" placeholder="Email">
+ 			</div>
+ 		</div>
+ 		<br/>
+ 		<div class="clearfix">
+ 			<label for="message"><span>Message:</span></label>
+ 			<div class="input">
+ 				<textarea tabindex="3" class="xxlarge span6" id="message" name="body" label="Message" columns = "12" rows="7" placeholder="Message"></textarea>
+ 			</div>
+ 		</div>
+ 		<div class="actions span2 offset4">
+ 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button class="btn btn-large btn-primary" type="button">Submit</button>
+ 		</div>
+ 	</fieldset>
+ </form>
+</div>
