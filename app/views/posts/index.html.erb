@@ -18,26 +18,24 @@
         <div class = "well well-large">
           
         <%= post.description %>
-    
+     <% User.where(:id => post.user_id).each do |row| %>
+  <br />  <br />
+          <p class = "pull-right">
+        posted by: <%= row.email %>
+      </p>
+        <br />
+
         <hr>
         
        
           <u><%=l post.created_at, :format => :long %></u> 
          
          
-          <% User.where(:id => post.user_id).each do |row| %>
-  
-
-       <%= row.email %>
-      <% end %>
+               <% end %>
         <% if current_user %>
         <% if current_user.id = post.user_id %>
 
-        <%= current_user.id %> then
-        <% User.where(:id => post.user_id).all.each do |user| %>
-      
-        <%= user.email %>
-        <%end%>
+       
           <div class = "pull-right">
                   <%= link_to "Edit Post",
                       edit_post_path(post), :class => 'btn btn-mini' %>
