@@ -37,6 +37,24 @@
     <body>
 
 
+<style type="text/css">
+.scrollspy-example {
+height: 200px;
+overflow: auto;
+position: relative;
+}
+</style>
+
+<style type="text/css">
+.nav-bar-james{
+height: 500px;
+overflow: auto;
+position: relative;
+}
+</style>
+<script src="/twitter-bootstrap/twitter-bootstrap-v2/docs/assets/js/jquery.js"></script>
+<script src="/twitter-bootstrap/twitter-bootstrap-v2/docs/assets/js/bootstrap-dropdown.js"></script>
+<script src="/twitter-bootstrap/twitter-bootstrap-v2/docs/assets/js/bootstrap-scrollspy.js"></script>
 
 
 
@@ -47,7 +65,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
-              <a class="brand" href="#">Reinventing the Toilet</a>
+              <a class="brand" href="/">Reinventing the Toilet</a>
             </a>
 
             <div class="container nav-collapse">
@@ -64,19 +82,15 @@
               <li> <%=link_to current_user.email.to_s, "" %> </li>
               <li> <%= link_to "Sign Out", destroy_user_session_path , :method => :delete %></li>
             </ul>
-            <%else%>
-
-
-
-
-
+            <% end %>
+            <% if not current_user %>
             <%= form_for("user", :url => user_session_path) do |f| %>
             <ul class="nav pull-right"> 
             <li><%= f.text_field :email  , :class => 'input-large', :placeholder => "Email"%> </li>
             <li><%= f.password_field :password  , :class => 'input-large ' , :placeholder => "Password"%>  </li>
             <li><%= f.submit 'Log in' , :class => 'btn btn-small btn-primary'%> </li>
           </ul>
-          <% end %>
+          <%end%>
           <%end%>
 
  </div>
@@ -90,19 +104,31 @@
 <div class="container">
   <div class="content">
     <div class="row">
-     <div class="span3">
+     <br /><br /><br /><br /><br />
 
-      <br/>
-      <div class="well sidebar-nav">
-        <h3>Navigation</h3>
-        <ul class="nav nav-list">
-          <li class="nav-header">Sidebar</li>
-          <li><%= link_to "Our Mission", "/static_pages/info"  %></li>
-          <li><%= link_to "About Us", "/static_pages/about"  %></li>
-          <li><%= link_to "Contact Us", "/static_pages/contact"  %></li>
+     <% if  @posts != nil %>
+
+    <div class="span3 "> <div = "nav-bar-james">
+            <div data-spy="scroll" data-target="#navbarExample" data-offset="1" class="scrollspy-example">
+        <ul class="nav nav-list bs-docs-sidenav affix">
+
+
+
+        <li class="active"><a href="#top"><i class="icon-chevron-right"></i> Top</a></li>
+          <% @posts.each do |post| %>
+
+          <li><a href=#<%=post.title%>><i class="icon-chevron-right"></i> <%=post.title%></a></li>
+
+
+          <% end %>
+
+         
+          
         </ul>
-      </div>
-    </div>
+</div>
+</div>
+</div>
+<% end %>
     <div class="span9">
 
       <br/>
@@ -203,6 +229,15 @@ window.setTimeout(function() { $(".welcome").alert('close'); }, 2000);
     </script>
 
     <script>
+
+    $('#navbarExample').scrollspy()
+
+    </script>
+
+
+
+
+         <script>
 
     $('#navbarExample').scrollspy()
 
