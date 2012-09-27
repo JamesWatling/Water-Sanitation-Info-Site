@@ -4,7 +4,7 @@ SWEN303::Application.routes.draw do
 
   resources :comments
 
-  devise_for :users
+devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   get "static_pages/about"
 
@@ -16,6 +16,9 @@ SWEN303::Application.routes.draw do
 
   resources :posts
 
+  devise_scope :user do
+    get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
+  end
 
 
   # The priority is based upon order of creation:
