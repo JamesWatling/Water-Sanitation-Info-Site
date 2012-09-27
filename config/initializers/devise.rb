@@ -194,7 +194,7 @@ Devise.setup do |config|
   # access, but formats like :xml or :json, should return 401.
 
 require "omniauth-facebook"
-config.omniauth :facebook, "361191863961063", "66fb6b7531467749acbda1761f332089"
+#config.omniauth :facebook, "361191863961063", "66fb6b7531467749acbda1761f332089"
 
 config.omniauth :facebook, "361191863961063", "66fb6b7531467749acbda1761f332089",
       {:scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}} 
