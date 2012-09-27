@@ -1,0 +1,24 @@
+<div class="post">
+  <h1><section id = <%= post.title %> ><%= link_to post.title, post_path(post) %></h1>
+  <div class="details">
+  	<div class = "well welllarge">
+    <%= post.description %>
+     <% User.where(:id => post.user_id).each do |row| %>
+ 
+  <br />  <br />
+          <p class = "pull-right">
+        posted by: <%= row.email %>
+    </p>
+      <br />
+   <hr>
+        
+       
+          <u><%=l post.created_at, :format => :long %></u> 
+         </p>
+         
+               <% end %>
+  </div>
+</div>
+
+
+
