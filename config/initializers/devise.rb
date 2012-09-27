@@ -192,6 +192,12 @@ Devise.setup do |config|
   # Lists the formats that should be treated as navigational. Formats like
   # :html, should redirect to the sign in page when the user does not have
   # access, but formats like :xml or :json, should return 401.
+
+require "omniauth-facebook"
+config.omniauth :facebook, "361191863961063", "66fb6b7531467749acbda1761f332089"
+
+config.omniauth :facebook, "361191863961063", "66fb6b7531467749acbda1761f332089",
+      {:scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}} 
   #
   # If you have any extra navigational formats, like :iphone or :mobile, you
   # should add them to the navigational formats lists.

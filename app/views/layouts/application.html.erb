@@ -182,7 +182,7 @@ position: relative;
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <%= javascript_include_tag "application" %>
-
+<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
   </body>
 
   <div class="modal fade large" id="test_modal">
