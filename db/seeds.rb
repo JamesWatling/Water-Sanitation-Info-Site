@@ -82,3 +82,4 @@ Post.create( :id =>137 , :user_id =>1, :title => "Improving Life Expectancy", :d
 
 Post.create( :id =>138 , :user_id =>1, :title => "Water, Sanitation & Hygiene", :description => "About 2 billion people use unsafe toilets or defecate in the open.  Poor sanitation causes severe diarrhea, which kills 1.5 million children each year.  Smart investments in sanitation can reduce disease, increase family incomes, keep girls in school, help preserve the environment, and enhance human dignity. ")
 
+User.create(:email => "watling.james@gmail.com" , :password => "button1")
