@@ -14,6 +14,8 @@ devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_call
 
   get "static_pages/help"
 
+  get "static_pages/winners"
+
   resources :posts
 
   devise_scope :user do

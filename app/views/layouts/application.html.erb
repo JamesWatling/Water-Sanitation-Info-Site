@@ -87,6 +87,7 @@ position: relative;
 
             <div class="container nav-collapse">
               <ul class="nav">
+                <li><%= link_to "Winners", "/static_pages/winners"  %></li>
                <li><%= link_to "Our Mission", "/static_pages/info"  %></li>
                <li><%= link_to "Contact Us", "/static_pages/contact"  %></li>
                <li> <a href="#test_modal" data-toggle="modal"> FAQ </a></li>
@@ -152,7 +153,7 @@ position: relative;
 <% end %>
     <div class="span9">
 
-      <br/>
+    
       <!-- <div class = "alert alert-success">
         <button type = "button" class ="close" data-dismiss="alert">x</button>
         <strong>
@@ -169,10 +170,6 @@ position: relative;
 
      </div>
      <% end %>
-
-
-
-
 
 
 
@@ -208,7 +205,7 @@ position: relative;
               <li class=""><a href="#cookies">Cookies</a></li>
               <li class=""><a href="#concerns">Concerns</a></li>
               <li class=""><a href="#government">Government</a></li>
-              <li class=""><a href="#remove">Removal Policy</a></li>
+              <li class=""><a href="#remove">Policy</a></li>
 
             </ul>
           </div>
@@ -216,15 +213,15 @@ position: relative;
       </div>
 
       <div data-spy="scroll" data-target="#navbarExample" data-offset="1" class="scrollspy-example">
-        <h4 id="privacy">How do you protect my privacy?</h4> <br/>
+        <h4 id="privacy">How do you protect my privacy?</h4> <br />
         <p>At reinventing the toilet, we are keenly aware of the trust our users place in us, and our responsibility to protect their privacy. We believe transparency and choice are the foundations of privacy. To help you make informed decisions about your own privacy, we work to let you know what information we collect when you use our products and services and how we use that information to improve your service.</p>
-        <br/><h4 id="cookies">Does you use cookies?</h4><br/>
+        <br /><h4 id="cookies">Does you use cookies?</h4><br />
         <p>Yes, like most websites we use cookies to improve your experience and to provide services and advertising. Cookies help us keep a record of your preferences, like whether you want your results in English or French, or if you use our admin panel.</p>
-        <br/><h4 id="concerns">How can I contact you if I have a privacy question or complaint?</h4><br/>
+        <br /><h4 id="concerns">How can I contact you if I have a privacy question or complaint?</h4><br />
         <p>If you feel there has been a breach of you or someone elses privacy please enclose all appropriate information including the time and date of the acitivty and then you can contact us any time through our privacy contact form. If you prefer, you can also write to: Privacy Matters c/o James Watling 1600 Amphitheatre Parkway Mountain View, California, 94043 USA</p>
-        <br/><h4 id="government">How often are you asked by governments to provide data on users?</h4><br/>
+        <br /><h4 id="government">How often are you asked by governments to provide data on users?</h4><br />
         <p>Like other technology and communications companies, we receive requests from government agencies around the world to provide information about users of our services and products. To help increase transparency about these requests we have created the Government Requests Tool, which shows the number of requests that we have received that relate primarily to criminal investigations. For more information about the tool and the nature of these requests, please check the Government Requests Tool FAQ.</p>
-        <br/><h4 id="remove">How can I remove information about myself from this website?</h4><br/>
+        <br/ ><h4 id="remove">How can I remove information about myself from this website?</h4><br />
         <p>
           Like all websites, we are a reflection of the content and information publicly available on the web. we do not have the ability to remove content directly from the web, so removing search results from us or another search engine leaves the underlying content unaffected. If you want to remove something from the web, you should contact the webmaster of the site and ask him or her to make a change. Once the content has been removed and our search engine crawl has visited the page again, the information will no longer appear in our search results. If you have an urgent removal request, you can also visit our help page for more information.</p>
 
@@ -254,10 +251,3 @@ window.setTimeout(function() { $(".welcome").alert('close'); }, 2000);
     </script>
 
 
-
-
-         <script>
-
-    $('#navbarExample').scrollspy()
-
-    </script>

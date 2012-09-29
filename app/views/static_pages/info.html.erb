@@ -1,71 +1,226 @@
-<style type="text/css">
-
-.gallerycontainer{
-position: relative;
-/*Add a height attribute and set to largest image's height to prevent overlaying*/
+<style>
+.box{
+    margin: 20px; padding: 15px;
+    background: #eee;
+    height: 500px;
 }
-
-.thumbnail img{
-border: 1px solid white;
-margin: 0 5px 5px 0;
+#navbar{
+    position: fixed;
+    top: 50px; left: 0px;
+    width: 100%;
+    background: #1199A3;
 }
-
-.thumbnail:hover{
-background-color: transparent;
+.nav li a{
+    float: left;
+    width: 80px;
+    padding: 15px 0;
 }
-
-.thumbnail:hover img{
-border: 0px solid black;
+.nav li a:hover{
+    color: #f33 !important;
+    background: none;
 }
-
-.thumbnail span{ /*CSS for enlarged image*/
-position: absolute;
-background-color: lightyellow;
-padding: 0px;
-left: -1000px;
-border: 0px dashed gray;
-visibility: hidden;
-color: black;
-text-decoration: none;
+.nav li.active a{
+    color: #9A2731;
+    text-decoration: underline;
+    font-size: 18px;
 }
-
-.thumbnail span img{ /*CSS for enlarged image*/
-border-width: 0;
-padding: 5px;
-}
-
-.thumbnail:hover span{ /*CSS for enlarged image*/
-visibility: visible;
-top: 0;
-left: 230px; /*position where enlarged image should offset horizontally */
-z-index: 50;
-}
-
-</style>
+​</style>
 
 
+<script>
+  $('#navbar').scrollspy({
+    offset: 100
+  });
+  var offset = 200;
+
+$('.navbar li a').click(function(event) {
+    event.preventDefault();
+    $($(this).attr('href'))[0].scrollIntoView();
+    scrollBy(0, -233);
+});
+
+</script>
+
+ <body data-spy="scroll" data-target="#navbar"  data-offset="1" class="scrollspy-example">
+<div class = "container">
+
+<div class = "row">
+	<div class = "span5" id="post1">
+		
+<h1 align = "center" > Our Mission </h1>
+
+Guided by the belief that every life has equal value, the Bill
+& Melinda Gates Foundation works to help all people lead
+healthy, productive lives. In developing countries, we focus
+on improving people’s health and giving them the chance to
+lift themselves out of hunger and poverty.
+We address problems that have a major impact on people in
+the developing world but get too little attention and funding.
+Our financial resources, while significant, represent a very
+small fraction of the overall funding needed to improve
+the lives of people living in extreme poverty. We advocate,
+therefore, for policies and resources to increase opportunities
+for people in the developing world.
+
+</div>
+
+<div class = "span5">
+<h1 align = "center"> Oppurtunity For Impact </h1>
+<p>
+New investments in sanitation tools and technologies
+including latrine design, pit emptying, sludge treatment,
+and the disposal or reuse of waste—have the potential to
+make sanitation services safe and affordable for everyone.
+We can make these innovations sustainable by stimulating
+demand for improved sanitation services among the poor
+and by developing safe processes for waste extraction
+and transport that will provide a new generation of
+entrepreneurs with good jobs and incomes. Historically,
+people have rejected sanitation solutions offered by
+governments, donors, and NGOs when they are too
+expensive, unpleasant to use, or difficult to maintain.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+<div class = "row">
+
+<div class = "span10">
+<h1 id="post2" align = "center"> Sanitation Life Cycle </h1>
+<img src = "/assets/chain.png">
+</div>
+
+
+</div>
+
+<br /><br />
+<div class = "row">
+
+<div class = "span10">
+<h1 id="post3" align = "center"> Our Strategy </h1>
+
+<p>
+Providing people with safe and sustainable
+sanitation services must go beyond simply giving
+them a latrine or toilet.
+</p>
+
+<p>
+Instead, we must understand the contexts in which poor
+people, local companies, and government agencies all
+operate. With this knowledge, it is possible to find lasting
+solutions that stimulate household demand for safe
+sanitation, encourage businesses to provide affordable-yet-
+durable sanitation products and services, and motivate
+governments to establish effective sanitation policies.
+To accomplish this, we are working with a wide range of
+partners, including governments, civil society, the private
+sector, and other donors.
+</p>
+
+<p>
+While the Water, Sanitation & Hygiene program has a number
+of existing grants that support sustainable approaches to clean
+water and hygiene, our funding now focuses primarily on
+sanitation, particularly in sub-Saharan Africa and South Asia,
+where the burden of unsafe sanitation is greatest.
+</p>
+
+</div>
+</div>
 
 
 
+<br /><br />
+<div class = "row">
+
+<div class = "span10">
+<h1 id="post4" align = "center"> Sanitation Science and Technology
+ </h1>
+
+<p>
+We are working to help develop, and bring to scale,
+innovative approaches to dealing with human waste
+that are affordable, safe, sustainable, and centered on
+the needs of the user. The Reinvent the Toilet Challenge
+(RTTC) is a key part of this effort because it encourages
+the development of waterless, hygienic toilets that do not
+require piped water or a sewer connection. The research
+funded by this initiative explores innovations in toilet
+technology based on chemical engineering processes for
+energy and resource recovery from human waste. The goal
+is to develop clean, safe, durable, and affordable toilets for
+the poor that cost less than five cents per user, per day and
+do not need to be connected to a sewer.
+
+</p>
+
+<p>
+We are also investing in projects that focus on the
+treatment and collection of waste. For example, one
+grantee is working to develop building blocks made of a
+biodegradable material that would replace conventional
+brick or cement constructions for pit latrines. The goal is
+to create a latrine that would decompose once the pits are
+filled, allowing for the eventual conversion of the land into
+farming and other uses.
+
+</p>
+
+<p>
+Another grantee is developing an algae-based water
+treatment system that would use bacteria to treat a
+community’s waste while producing renewable resources:
+a nutrient-rich fertilizer for agricultural use and bio-
+methane to power the sanitat
+
+</p>
+
+</div>
+</div>
 
 
+<br /><br />
+<div class = "row">
+
+<div class = "span10">
+<h1 id="post5" align = "center"> Delivery Models at Scale </h1>
+
+<p>
+This initiative supports the wide-scale implementation of
+an effective approach to rural sanitation that can end open
+defecation and upgrade unsafe latrines. The core of this
+approach involves stimulating both demand for, and supply
+of, improved sanitation in rural communities. Achieving
+a high rate of adoption, and sustaining it over time, will
+require a deeper understanding of what people want, what
+they will keep using, and the policies and practices needed
+to support those changes at scale.
 
 
+</p>
 
-<div class="gallerycontainer">
+<p>
+The emerging consensus in the sanitation field suggests
+that community-led sanitation approaches are effective
+at reducing unsanitary practices and achieving open-
+defecation-free (ODF) status. By supporting a range of
+approaches to demand-driven rural sanitation through a
+number of partners, we will help to improve the models for
+triggering and sustaining demand for safe sanitation. In
+addition to triggering demand, these programs encourage
+local entrepreneurs to offer a range of affordable, desirable
+sanitation products and build the capacity of local
+government to support improved sanitation.
 
-<a class="thumbnail" href="#thumb"><img src="/assets/winner.jpg" width="100px" height="66px" border="0" /><span><img src="/assets/winner.jpg" /><br />Prof Michael Hoffman shows off his winning design </span></a>
+</p>
 
-<a class="thumbnail" href="#thumb"><img src="/assets/toilet.jpg" width="100px" height="66px" border="0" /><span><img src="/assets/toilet.jpg" /><br />So real, it's unreal. Or is it?</span></a>
-
-<br />
-
-<a class="thumbnail" href="#thumb"><img src="/assets/sushi2_thumb.jpg" width="100px" height="75px" border="0" /><span><img src="/assets/sushi2.jpg" /><br />Sushi for dinner anyone?</span></a> 
-
-<a class="thumbnail" href="#thumb"><img src="/assets/horses_thumb.jpg" width="100px" height="70px" border="0" /><span><img src="/assets/horses.jpg" /><br />Run wild with horses.</span></a>
-
-<br />
-
+</div>
 </div>
 
 
@@ -74,6 +229,28 @@ z-index: 50;
 
 
 
-<embed src="http:/www.gatesfoundation.org/_layouts/swf/Multi/assets/player.swf" width="870" height="510" bgcolor="000000" allowfullscreen="true" allowscriptaccess="always" flashvars="file=http:/gates.edgeboss.net/download/gates/gfo/toilet-web-video.mp4&image=http:/www.gatesfoundation.org/watersanitationhygiene/PublishingImages/how-video-still-480x270.jpg"></embed>
 
+</div>
+
+
+<br /><br /><br /><br /><br />
+
+<embed src="http:/www.gatesfoundation.org/_layouts/swf/Multi/assets/player.swf" width="780" height="510" bgcolor="000000" allowfullscreen="true" allowscriptaccess="always" flashvars="file=http:/gates.edgeboss.net/download/gates/gfo/toilet-web-video.mp4&image=http:/www.gatesfoundation.org/watersanitationhygiene/PublishingImages/how-video-still-480x270.jpg"></embed>
+
+
+    
+    
+    
+    <div id="navbar">
+        <ul class="nav">
+            <li><a href="#post1"><small>Our Mission</small></a></li>
+            <li><a href="#post2"><small>Life Cycle</small></a></li>
+            <li><a href="#post3"><small>Our Stategy</small></a></li>
+            <li><a href="#post4"><small>Science</small></a></li>
+            <li><a href="#post5"><small>Scales</small></a></li>
+        </ul>
+    </div>
+    
+    
+</body>​
 
